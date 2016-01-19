@@ -5,7 +5,7 @@
 ** Login   < petit_x@epitech.net >
 ** 
 ** Started on  Mon Jan 18 10:23:38 2016 petit_x - Marlon Petit
-** Last update Mon Jan 18 15:55:31 2016 Marlon Petit
+** Last update Tue Jan 19 09:34:07 2016 Marlon Petit
 */
 
 #ifndef TOY_H_
@@ -20,7 +20,7 @@ class		Toy
 {
 public:
   enum{BASIC_TOY, ALIEN, BUZZ, WOODY};
-  int		getType();
+  int		getType() const;
   std::string	getName() const;
   void		setName(std::string);
   Toy();
@@ -37,8 +37,8 @@ public:
   {
   public:
     enum	ErrorType{UNKNOWN, PICTURE, SPEAK};
-    std::string	what();
-    std::string	where();
+    std::string	what() const;
+    std::string	where() const;
     ErrorType	type;
   };
   Toy::Error	getLastError();

@@ -1,11 +1,11 @@
-/*
+B1;2802;0c/*
 ** Toy.h for Toy/home/petit_x/Epitech/rendu/piscine_cpp/piscine_cpp_d13/ex00/Toy.h
 ** 
 ** Made by  petit_x - Marlon Petit
 ** Login   < petit_x@epitech.net >
 ** 
 ** Started on  Mon Jan 18 10:23:38 2016 petit_x - Marlon Petit
-** Last update Mon Jan 18 11:17:38 2016 Marlon Petit
+** Last update Tue Jan 19 09:30:56 2016 Marlon Petit
 */
 
 #ifndef TOY_H_
@@ -20,13 +20,13 @@ class		Toy
 {
 public:
   enum{BASIC_TOY, ALIEN, BUZZ, WOODY};
-  int		getType();
-  std::string	getName();
+  int		getType() const;
+  std::string	getName() const;
   void		setName(std::string);
   Toy();
   Toy(int, std::string, const std::string&);
   bool		setAscii(const std::string& file);
-  std::string	getAscii();
+  std::string	getAscii() const;
   virtual ~Toy();
   Toy& operator=(Toy const&);
   void		speak(std::string);

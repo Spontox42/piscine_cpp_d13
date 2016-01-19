@@ -5,7 +5,7 @@
 ** Login   < petit_x@epitech.net >
 ** 
 ** Started on  Mon Jan 18 10:23:45 2016 petit_x - Marlon Petit
-** Last update Mon Jan 18 11:14:06 2016 Marlon Petit
+** Last update Tue Jan 19 09:36:07 2016 Marlon Petit
 */
 
 #include "Toy.h"
@@ -17,12 +17,12 @@ Toy::Toy(int type, std::string name, const std::string& file)
   this->pict.getPictureFromFile(file);
 }
 
-int	Toy::getType()
+int	Toy::getType() const
 {
   return (this->type);
 }
 
-std::string	Toy::getName()
+std::string	Toy::getName() const
 {
   return (this->name);
 }
@@ -43,7 +43,7 @@ bool	Toy::setAscii(const std::string& file)
   return(this->pict.getPictureFromFile(file));
 }
 
-std::string	Toy::getAscii()
+std::string	Toy::getAscii() const
 {
   return (this->pict.data);
 }
@@ -61,5 +61,9 @@ Toy&	Toy::operator=(Toy const& toy)
 
 void	Toy::speak(std::string sent)
 {
+  if (this->type == BUZZ)
+    std::cout << "BUZZ: ";
+  else if (this->type == WOODY)
+    std::cout << "WOODY: "
   std::cout << this->name << " \"" << sent << "\"" << std::endl;
 }

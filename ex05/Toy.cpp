@@ -5,7 +5,7 @@
 ** Login   < petit_x@epitech.net >
 ** 
 ** Started on  Mon Jan 18 10:23:45 2016 petit_x - Marlon Petit
-** Last update Mon Jan 18 15:56:19 2016 Marlon Petit
+** Last update Tue Jan 19 09:35:30 2016 Marlon Petit
 */
 
 #include "Toy.h"
@@ -19,7 +19,7 @@ Toy::Toy(int type, std::string name, const std::string& file)
   this->error.type = Error::UNKNOWN;
 }
 
-int	Toy::getType()
+int	Toy::getType() const
 {
   return (this->type);
 }
@@ -73,6 +73,10 @@ Toy&	Toy::operator=(Toy const& toy)
 
 void	Toy::speak(std::string sent)
 {
+  if (this->type == BUZZ)
+    std::cout << "BUZZ: ";
+  else if (this->type == WOODY)
+    std::cout << "WOODY: ";
   std::cout << this->name << " \"" << sent << "\"" << std::endl;
 }
 
@@ -99,7 +103,7 @@ Toy	&Toy::operator<<(std::string s)
   return (*this);
 }
 
-std::string	Toy::Error::what()
+std::string	Toy::Error::what() const
 {
   if (this->type == PICTURE)
     return ("bad new illustration");
@@ -108,7 +112,7 @@ std::string	Toy::Error::what()
   return ("");
 }
 
-std::string	Toy::Error::where()
+std::string	Toy::Error::where() const
 {
   if (this->type == PICTURE)
     return ("setAscii");

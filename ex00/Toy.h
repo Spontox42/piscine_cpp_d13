@@ -5,7 +5,7 @@
 ** Login   < petit_x@epitech.net >
 ** 
 ** Started on  Mon Jan 18 10:23:38 2016 petit_x - Marlon Petit
-** Last update Mon Jan 18 10:38:36 2016 Marlon Petit
+** Last update Tue Jan 19 09:29:20 2016 Marlon Petit
 */
 
 #ifndef TOY_H_
@@ -20,13 +20,13 @@ class		Toy
 {
 public:
   enum{BASIC_TOY, ALIEN};
-  int		getType();
-  std::string	getName();
+  int		getType() const;
+  std::string	getName() const;
   void		setName(std::string);
   Toy();
   Toy(int, std::string, const std::string&);
   bool		setAscii(const std::string& file);
-  std::string	getAscii();
+  std::string	getAscii() const;
 private:
   int		type;
   std::string	name;
